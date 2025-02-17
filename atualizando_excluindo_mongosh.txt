@@ -1,0 +1,18 @@
+# Atualização de Documentos
+
+## updateMany
+db.serie.updateMany({"Série":{$in:["Four More Shots Please", "Fleabag"]}},{$set: {"Classificação": "18+"}})
+
+## updateOne
+db.series.updateOne({"Série": "Grimm"},{$set: {"Temporadas disponíveis": 6}})
+
+## replaceOne
+db.series.replaceOne({"Série": "Grimm"},{"Série": "Grimma"})
+
+# Excluindo Documentos
+
+## deleteOne
+db.series.deleteOne({"Série":"The Boys"})
+
+## deleteMany
+db.series.deleteMany({"Temporadas disponíveis":1})
