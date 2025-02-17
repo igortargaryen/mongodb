@@ -1,0 +1,14 @@
+# FIND é um método de busca.
+db.series.find() 
+db.series.find({"Ano de lançamento": 2018})
+db.series.find({},{"Série":1,"Ano de lançamento":1,"_id":0}) #{} é o filtro de pesquisa. Aqui, como está vazio, significa que não há filtro e todos os documentos da coleção serão retornados.
+db.series.find ({"Ano de lançamento":{$in: [2019,2020]}}) #$in: O operador $in é usado para verificar se o valor do campo Ano de lançamento está dentro de uma lista de valores especificados.
+
+## sort() é um objeto onde a chave é o campo pelo qual queremos ordenar e o valor define a direção da ordenação.
+db.series.find().sort({"Série":1}) #O valor 1 indica que a ordenação será crescente. -1 Decrescente.
+
+db.series.find({"Temporadas disponíveis": {$gte:4}}) #$gte (Greater Than or Equal) significa "maior ou igual a".
+db.serie.find({"Ano de lançamento": {$ne: 2020}}) #$ne: O operador $ne significa "não igual a" (Not Equal).
+
+db.series.find({"Genero": {$all:["Ação, "Comédia]}}) #O operador $all é usado para verificar se um campo (neste caso, Genero) contém todos os valores especificados na lista fornecida.
+
